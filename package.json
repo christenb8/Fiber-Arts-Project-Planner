@@ -1,0 +1,26 @@
+{
+  "name": "swe-training-backend-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heirynhr/SWE-Training-Backend-Template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heirynhr/SWE-Training-Backend-Template/issues"
+  },
+  "homepage": "https://github.com/heirynhr/SWE-Training-Backend-Template#readme",
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "express": "^5.1.0",
+    "graphql": "^16.11.0",
+    "mongoose": "^8.18.0"
+  }
+}
