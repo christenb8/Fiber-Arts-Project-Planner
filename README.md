@@ -1,17 +1,7 @@
-# SHPE UF SWE Training Template
-## Congrats on being selected as prospective software developer directors! (aka Sweenies)
-In this repository, you have the backend (Node.js/Express) and the frontend (React). This is your starting point for creating a full-stack project!
+# Project Details:
+This project will be a project planner app but specifically for activities like knitting or crocheting, fiber arts activites. It will include information about every project the user has made and logged. This will include things like yarn used, hooks/needles used, time taken to complete the project, and what pattern was used. On this app, users have the ability to track their progress on a project. The purpose of this app is to keep information about completed projects, how they were made (so they could be made again), and to track progress on current projects.
 
-## Getting Started: 
-
-1. Use the Repository as a template
-Make sure to **Fork** this repo.
-
-2. Install Backend Dependencies
-Navigate into the backend folder and install all the necessary server packages.
-
-cd backend
-npm install
-
-
-# Feel free to change this README and add your project details here
+# Additional Features:
+- Area to write down possible ideas and the possible materials/patterns needed
+- Statistics about completed projects (For ex. What color yarn do you use most often? What types of projects do you gravitate towards?)
+- Place to update progress on a pattern (while keeping track of the time last update)
