@@ -32,7 +32,28 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
 
     # write your code here!
+    type User {
+        id: ID!
+        name: String!
+        age: Int
+    }
 
+    type Project {
+        id: ID!
+        name: String!
+        description: String
+        timeTaken: Int
+    }
+
+    type Query {
+        getUsers: [User]
+        getProjects: [Project]
+    }
+
+    type Mutation {
+        createUser(name: String!, age: Int): User
+        addProject(name: String!, description: String, timeTaken: Int): Project
+    }
 
     # You can add more types, queries, and mutations here.
     # For example, if you have a 'Post' and 'User' type:
