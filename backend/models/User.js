@@ -17,13 +17,5 @@ const UsersSchema = new Schema( {
 // automatically creates a collection named whatever the TypeNameSchema is called
 // module.exports = model('Type Name', TypeNameSchema);
 
-const ProjectsSchema = new Schema( {
-    name: String,
-    description: String,
-    timeTaken: Number
-})
 
-const User = model('User', UsersSchema);
-const Project = model('Project', ProjectsSchema);
-
-module.exports = {User, Project};
+module.exports = model('User', UsersSchema);

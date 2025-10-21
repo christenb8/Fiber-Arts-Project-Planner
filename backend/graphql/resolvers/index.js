@@ -28,3 +28,5 @@ module.exports = {
 };
 */
 
+const typeNameResolvers = require('./TypeName');
+module.exports = typeNameResolvers;
