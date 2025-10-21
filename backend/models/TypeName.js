@@ -8,7 +8,12 @@ const {model, Schema } = require('mongoose');
     field2: String
 });*/
 
+const UsersSchema = new Schema( {
+    name: String,
+    age: Number
+})
+
 // Create and export the model.
 // automatically creates a collection named whatever the TypeNameSchema is called
-module.exports = model('Type Name', TypeNameSchema);
-
+// module.exports = model('Type Name', TypeNameSchema);
+module.exports = model('Somethingggg', UsersSchema);
