@@ -22,4 +22,34 @@ const resolvers = require('./graphql/resolvers');
 
 
 */
+const express = require('express');
+const { ApolloServer } = require('apollo-server-express');
+const mongoose = require('mongoose');
 
+const { mongoURI, port } = require('./config');
+
+const typeDefs = require('./graphql/TypeDefs');
+const resolvers = require('./graphql/resolvers');  
+
+const app = express();
+
+// Connect to MongoDB
+mongoose.connect(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+})
+.then(() => console.log('✅ MongoDB connected successfully'))
+.catch((err) => console.error('❌ MongoDB connection error:', err));
+
+// Set up Apollo Server
+async function startServer() {
+  const server = new ApolloServer({ typeDefs, resolvers });
+  await server.start();
+  server.applyMiddleware({ app });
+
+  app.listen(port, () => {
+    console.log(`🚀 Server running at http://localhost:${port}${server.graphqlPath}`);
+  });
+}
+
+startServer();
