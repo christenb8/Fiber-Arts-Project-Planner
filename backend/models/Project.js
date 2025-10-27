@@ -15,7 +15,8 @@ const {model, Schema } = require('mongoose');
 const ProjectsSchema = new Schema( {
     name: String,
     description: String,
-    timeTaken: Number
+    timeTaken: Number,
+    completed: Boolean
 })
 
 module.exports = model('Project', ProjectsSchema);

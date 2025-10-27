@@ -34,8 +34,14 @@ const typeDefs = gql`
     # write your code here!
     type User {
         id: ID!
-        name: String!
+        username: String!
         age: Int
+        password: String
+    }
+
+    type AuthPayload {
+        token: String!
+        user: User!
     }
 
     type Project {
@@ -43,16 +49,22 @@ const typeDefs = gql`
         name: String!
         description: String
         timeTaken: Int
+        completed: Boolean!
     }
 
     type Query {
         getUsers: [User]
         getProjects: [Project]
+        getUsername: String
+        getProject(id: ID!): Project
     }
 
     type Mutation {
-        createUser(name: String!, age: Int): User
-        addProject(name: String!, description: String, timeTaken: Int): Project
+        signupUser(username: String!, password: String!): AuthPayload
+        loginUser(username: String!, password: String!): AuthPayload
+        addProject(name: String!, description: String, timeTaken: Int, completed: Boolean): Project
+        deleteProject(id: ID!): Project 
+        updateProject(id: ID!, name: String!, description: String, completed: Boolean!): Project   
     }
 
     # You can add more types, queries, and mutations here.

@@ -43,7 +43,14 @@ mongoose.connect(mongoURI, {
 
 // Set up Apollo Server
 async function startServer() {
-  const server = new ApolloServer({ typeDefs, resolvers });
+  const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    context: async ({ req }) => {
+      const token = req.headers.authorization || '';
+      return { token };
+    }
+  });
   await server.start();
   server.applyMiddleware({ app });
 

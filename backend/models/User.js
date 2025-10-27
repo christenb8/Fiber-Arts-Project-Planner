@@ -8,8 +8,9 @@ const {model, Schema } = require('mongoose');
     field2: String
 });*/
 
-const UsersSchema = new Schema( {
-    name: String,
+const UsersSchema = new Schema({
+    username: { type: String, unique: true },
+    password: String,
     age: Number
 })
 
