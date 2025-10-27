@@ -1,10 +1,12 @@
 import { gql, useQuery } from "@apollo/client";
+import './UserList.css';
 
 const GET_USERS = gql`
   query GetUsersList {
-    users {
+    getUsers {
       id
-      name
+      username
+      age
     }
   }
 `;
@@ -16,11 +18,15 @@ const UserList = () => {
   if (error) return <p>Network Error: {error.message}</p>;
 
   return (
-    <ul>
-      {data.users.map((user) => (
-        <li key={user.id}>{user.name}</li>
-      ))}
-    </ul>
+    <div className="user-list">
+      <ul>
+        {data.getUsers.map((user) => (
+          <li key={user.id} className="user-item">
+            {user.username} {user.age ? `(${user.age} years old)` : ''}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
